@@ -1,0 +1,44 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/push_swap",
+      "args": ["1 91 56 64 41 2 99 58 85 54 59 82 65 40 15 22 6 19 28 30 71 98 24 53 67 4 39 50 60 8 97 61 89 44 72 18 74 34 69 78 3 76 42 73 9 51 21 26 29 52 70 88 100 66 16 45 31 55 47 11 23 7 92 13 27 63 25 17 10 33 48 14 94 57 79 87 20 49 38 43 68 75 96 93 37 36 84 81 5 80 77 86 32 90 62 83 12 35 95 0"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C/C++: gcc build active file"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "cwd": "/home/ysuliman/Cursus/push_swap_array",
+      "program": "/home/ysuliman/Cursus/push_swap_array/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
