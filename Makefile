@@ -6,7 +6,7 @@
 #    By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/08 16:14:06 by ysuliman          #+#    #+#              #
-#    Updated: 2024/10/16 16:16:32 by ysuliman         ###   ########.fr        #
+#    Updated: 2024/11/10 19:46:57 by ysuliman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFTDIR	= ./libft
 
 SRC			= ./files
 
-PUSH_SWAP_SRCS	= ft_check_sort.c utils.c push_swap.c ft_countspaces.c operations.c ft_sort.c sort_big_stack.c\
+PUSH_SWAP_SRCS	= ft_check_sort.c utils.c push_swap.c ft_countspaces.c operations.c ft_sort.c sort_big_stack.c ft_sort_5.c\
 
 OBJS		= $(PUSH_SWAP_SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 19:51:55 by ysuliman          #+#    #+#             */
-/*   Updated: 2024/10/17 13:46:12 by ysuliman         ###   ########.fr       */
+/*   Updated: 2024/11/10 19:49:27 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ void	rr(long *a, long *b);
 void	rra(long *a);
 void	rrb(long *b);
 void	rrr(long *a, long *b);
+void	sort_5(long *a, long *b);
+void	sort_3(long *a);
+void	sort_4(long *a, long *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:35:18 by ysuliman          #+#    #+#             */
-/*   Updated: 2024/10/17 13:44:59 by ysuliman         ###   ########.fr       */
+/*   Updated: 2024/11/10 21:11:15 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	ft_intlen(long *array)
 	int	length;
 
 	length = 0;
-	while (array[length] != '\0')
-	{
+	while (array[length] != 0)
 		length++;
-	}
 	return (length);
 }
 

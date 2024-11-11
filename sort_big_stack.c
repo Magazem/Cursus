@@ -6,32 +6,24 @@
 /*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 11:49:23 by ysuliman          #+#    #+#             */
-/*   Updated: 2024/10/17 13:29:22 by ysuliman         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:08:30 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_arrays(long *morph, long *a, long *index, int a_len)
+void	remorph(long *weight, long *index, int a_len)
 {
-	printf("Morph: ");
-	for (int i = 0; i < a_len; i++)
+	long	num_index;
+	int		i;
+
+	i = 0;
+	while (i < a_len)
 	{
-		printf("%ld ", morph[i]);
+		num_index = index[a_len - i - 1];
+		weight[num_index - 1] = a_len - i;
+		i++;
 	}
-	printf("\n");
-	printf("Original A: ");
-	for (int i = 0; i < a_len; i++)
-	{
-		printf("%ld ", a[i]);
-	}
-	printf("\n");
-	printf("Index: ");
-	for (int i = 0; i < a_len; i++)
-	{
-		printf("%ld ", index[i]);
-	}
-	printf("\n");
 }
 
 int	bits_num(int n)
@@ -67,10 +59,6 @@ void	bubble_sort(long *morph, int a_len, long *index)
 				temp = index[j];
 				index[j] = index[j + 1];
 				index[j + 1] = temp;
-				printf("Swapped: morph[%d]=%ld with morph[%d]=%ld\n", j, morph[j
-					+ 1], j + 1, morph[j]);
-				printf("Swapped indices: index[%d]=%ld with index[%d]=%ld\n", j,
-					index[j + 1], j + 1, index[j]);
 			}
 			j++;
 		}
@@ -110,10 +98,12 @@ void	sort_big_stack(long *a, long *b, int a_len)
 {
 	long	*morph;
 	int		i;
+	long	*weight;
 	long	*index;
 
 	morph = malloc(sizeof(long) * a_len);
 	index = malloc(sizeof(long) * a_len);
+	weight = malloc(sizeof(long) * a_len);
 	i = 0;
 	while (i < a_len)
 	{
@@ -121,12 +111,10 @@ void	sort_big_stack(long *a, long *b, int a_len)
 		morph[i] = a[i];
 		i++;
 	}
-	printf("Before sorting:\n");
-	print_arrays(morph, a, index, a_len);
 	bubble_sort(morph, a_len, index);
-	printf("After sorting:\n");
-	print_arrays(morph, a, index, a_len);
-	bit_sort(index, b, a_len);
+	remorph(weight, index, a_len);
+	bit_sort(weight, b, a_len);
+	free(weight);
 	free(index);
 	free(morph);
 }

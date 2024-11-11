@@ -6,7 +6,7 @@
 /*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 20:26:02 by ysuliman          #+#    #+#             */
-/*   Updated: 2024/10/17 11:27:50 by ysuliman         ###   ########.fr       */
+/*   Updated: 2024/11/10 21:00:41 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,38 @@ void	sa(long *a)
 
 void	sb(long *b)
 {
-	sa(b);
+	int	i;
+	int	tmp;
+
+	i = ft_intlen(b) - 1;
+	if (i > 0)
+	{
+		tmp = b[i];
+		b[i] = b[i - 1];
+		b[i - 1] = tmp;
+	}
 	write(1, "sb\n", 3);
 }
 
 void	ss(long *a, long *b)
 {
-	sa(a);
-	sa(b);
+	int	i;
+	int	tmp;
+
+	i = ft_intlen(b) - 1;
+	if (i > 0)
+	{
+		tmp = b[i];
+		b[i] = b[i - 1];
+		b[i - 1] = tmp;
+	}
+	i = ft_intlen(a) - 1;
+	if (i > 0)
+	{
+		tmp = a[i];
+		a[i] = a[i - 1];
+		a[i - 1] = tmp;
+	}
 	write(1, "ss\n", 3);
 }
 
@@ -70,7 +94,7 @@ void	pb(long *a, long *b)
 
 void	ra(long *a)
 {
-	int	len;
+	int		len;
 	long	top;
 
 	len = ft_intlen(a) - 1;
@@ -88,21 +112,54 @@ void	ra(long *a)
 
 void	rb(long *b)
 {
-	ra(b);
+	int		len;
+	long	top;
+
+	len = ft_intlen(b) - 1;
+	if (len < 1)
+		return ;
+	top = b[len];
+	while (len > 0)
+	{
+		b[len] = b[len - 1];
+		len--;
+	}
+	b[0] = top;
 	write(1, "rb\n", 3);
 }
 
 void	rr(long *a, long *b)
 {
-	ra(a);
-	rb(b);
+	int		len;
+	long	top;
+
+	len = ft_intlen(a) - 1;
+	if (len < 1)
+		return ;
+	top = a[len];
+	while (len > 0)
+	{
+		a[len] = a[len - 1];
+		len--;
+	}
+	a[0] = top;
+	len = ft_intlen(b) - 1;
+	if (len < 1)
+		return ;
+	top = b[len];
+	while (len > 0)
+	{
+		b[len] = b[len - 1];
+		len--;
+	}
+	b[0] = top;
 	write(1, "rr\n", 3);
 }
 
 void	rra(long *a)
 {
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 	long	bottom;
 
 	len = ft_intlen(a) - 1;
@@ -121,13 +178,49 @@ void	rra(long *a)
 
 void	rrb(long *b)
 {
-	rra(b);
+	int		len;
+	int		i;
+	long	bottom;
+
+	len = ft_intlen(b) - 1;
+	if (len < 1)
+		return ;
+	bottom = b[0];
+	i = 0;
+	while (i < len)
+	{
+		b[i] = b[i + 1];
+		i++;
+	}
+	b[len] = bottom;
 	write(1, "rrb\n", 4);
 }
 
 void	rrr(long *a, long *b)
 {
-	rra(a);
-	rrb(b);
+	int		len;
+	int		i;
+	long	bottom;
+
+	len = ft_intlen(b) - 1;
+	bottom = b[0];
+	i = 0;
+	while (i < len)
+	{
+		b[i] = b[i + 1];
+		i++;
+	}
+	b[len] = bottom;
+	len = ft_intlen(a) - 1;
+	if (len < 1)
+		return ;
+	bottom = a[0];
+	i = 0;
+	while (i < len)
+	{
+		a[i] = a[i + 1];
+		i++;
+	}
+	a[len] = bottom;
 	write(1, "rrr\n", 4);
 }

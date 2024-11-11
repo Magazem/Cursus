@@ -6,7 +6,7 @@
 /*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 19:51:41 by ysuliman          #+#    #+#             */
-/*   Updated: 2024/10/17 13:46:20 by ysuliman         ###   ########.fr       */
+/*   Updated: 2024/11/10 21:54:06 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ long	find_smallest_int(long *array, int len)
 	long	smallest;
 
 	smallest = 1;
-	while (len >= 0)
+	while (len > 0)
 	{
 		if (array[len - 1] < smallest)
 			smallest = array[len - 1];
